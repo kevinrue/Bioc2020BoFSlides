@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+libs
+index_files
+.DS_Store
+index.html
