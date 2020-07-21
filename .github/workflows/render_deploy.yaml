@@ -20,7 +20,7 @@ jobs:
 
       - name: Initialise renv
         run: |
-          install.packages(c('renv', 'BiocManager'))
+          install.packages(c('renv', 'remotes', 'BiocManager'))
         shell: Rscript {0}
 
       - name: Cache renv
