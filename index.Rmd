@@ -138,7 +138,6 @@ during the session!
 ## No logo ...
 
 `r BiocStyle::Biocpkg('Rcwl')`
-
 ]
 
 .pull-right[
@@ -151,6 +150,12 @@ during the session!
 <i class="far fa-thumbs-up"></i> Containerized environments
 
 <i class="far fa-thumbs-up"></i> Conda environments
+
+<i class="far fa-thumbs-up"></i> Parallelisation
+]
+
+.center[
+What is _your_ favorite?
 ]
 
 ---
