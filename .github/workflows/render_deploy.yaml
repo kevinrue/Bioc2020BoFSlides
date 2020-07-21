@@ -21,7 +21,7 @@ jobs:
       - name: Initialise renv
         run: |
           options(repos = c(CRAN = "https://cran.r-project.org"))
-          install.packages(c('renv', 'remotes', 'BiocManager'))
+          install.packages(c('renv', 'remotes'))
         shell: Rscript {0}
 
       # This lets us augment with additional dependencies
