@@ -134,9 +134,11 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 <a href="https://github.com/cgat-developers"><img src="https://avatars3.githubusercontent.com/u/5339854?s=200&v=4", height="50px" align="middle"></a>
 <a href="https://github.com/cgat-developers/cgat-core"><img src="https://github.com/cgat-developers/cgat-core/raw/master/docs/img/CGAT_logo.png", height="50px" align="middle"></a>
 
+<a href="https://bcbio-nextgen.readthedocs.io/en/latest/"><img src="https://bcbio-nextgen.readthedocs.io/en/latest/_images/banner.png", height="50px", align="middle"></a>
+<a href="https://workflowhub.eu/"><img src="https://workflowhub.eu/assets/logos/workflowhub-20f8594d47fa27784d6a3c24010cf728e6b47753448dfa0cb6c7b7cc055c08bf.svg", height="50px", align="middle"></a>
+
 <a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
 <a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
-<a href="https://bcbio-nextgen.readthedocs.io/en/latest/"><img src="https://bcbio-nextgen.readthedocs.io/en/latest/_images/banner.png", height="60px", align="middle"></a>
 
 ## No logo ...
 
