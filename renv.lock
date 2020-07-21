@@ -26,6 +26,18 @@
       "Repository": "CRAN",
       "Hash": "db75371846625725e221470b310da1d5"
     },
+    "BiocStyle": {
+      "Package": "BiocStyle",
+      "Version": "2.16.0",
+      "Source": "Bioconductor",
+      "Hash": "7dba8ba80463cb90215ac9ddd7e7935f"
+    },
+    "BiocVersion": {
+      "Package": "BiocVersion",
+      "Version": "3.11.1",
+      "Source": "Bioconductor",
+      "Hash": "2331d61d077a7a0a5afe8c907ea9106b"
+    },
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-51.6",
@@ -102,6 +114,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "8d96f3da9e7ec851e14e39c0872ad1ab"
+    },
+    "bookdown": {
+      "Package": "bookdown",
+      "Version": "0.20",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "31ed5641f4a91cf113de490e0bb006b8"
     },
     "callr": {
       "Package": "callr",
