@@ -20,15 +20,9 @@ jobs:
 
       - name: Initialise renv
         run: |
+          options(repos = c(CRAN = "https://cran.r-project.org"))
           install.packages(c('renv', 'remotes', 'BiocManager'))
         shell: Rscript {0}
-
-      - name: Cache renv
-        uses: actions/cache@v1
-        with:
-          path: ~/.local/share/renv
-          key: ${{ runner.os }}-r-1-${{ hashFiles('renv.lock') }}
-          restore-keys: ${{ runner.os }}-r-1-
 
       # This lets us augment with additional dependencies
       - name: Install system dependencies
@@ -40,13 +34,12 @@ jobs:
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
-      - name: Install dependencies
-        run: |
-          options(repos = c(CRAN = "https://cran.r-project.org"))
-          BiocManager::repositories()
-          remotes::install_deps(dependencies = TRUE, repos = BiocManager::repositories(), Ncpu = 2L)
-          remotes::install_cran("rcmdcheck")
-        shell: Rscript {0}
+      - name: Cache renv
+        uses: actions/cache@v1
+        with:
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-r-1-${{ hashFiles('renv.lock') }}
+          restore-keys: ${{ runner.os }}-r-1-
 
       - name: Render site
         run: |
