@@ -52,6 +52,88 @@ bib <- ReadBib("references.bib")
 
 ---
 
+# Structure of the session
+
+.pull-left[
+## What
+
+<i class="far fa-clock"></i>
+This session is 55 minutes.
+
+<i class="fas fa-info-circle"></i>
+A handful of introduction slides.
+
+  + Workflow managers
+  
+  + Environment managers
+
+<i class="fas fa-volume-up"></i>
+Open discussion
+
+  + Your preferences
+  
+  + Best practices
+  
+  + Feature requests
+]
+
+.pull-right[
+## How
+
+<i class="far fa-comment-alt"></i>
+Text chat (on the right)
+
+<i class="fas fa-chart-bar"></i>
+Polls (on the right)
+
+<i class="fas fa-microphone"></i>
+Message in the chat, or raise your hand:
+we'll pass the (virtual) mic in turn!
+
+<i class="fab fa-google-drive"></i>
+Take notes on this collaborative
+[Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
+during the session!
+]
+
+---
+
+# Reproducible workflows and environments
+
+## Why do we care?
+
+> The bio.tools registry of life science software tools includes over 17,000 entries from more than 1,000 contributors `r Citep(bib, "mark2020pipelines")`.
+
+- We all write workflows that combine many of those tools to process and analyze data.
+
+  + e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics
+
+- For full reproducibility, collaboration and teaching relies on the capacity to share:
+
+  + Code
+  
+  + Environments (software dependencies and versions)
+  
+  + Input data (e.g., raw data, annotations)
+
+
+---
+
+# Stuff
+
+
+
+- That does not even include _versions_ of those software tools!
+
+- Individual workflows combine many of those tools for analysis
+  (e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics)
+
+
+
+
+
+---
+
 # Stuff
 
 > A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions `r Citep(bib, "mark2020pipelines")`.
