@@ -94,6 +94,10 @@ we'll pass the (virtual) mic in turn!
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
 during the session!
+
+<i class="fab fa-slack"></i>
+Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
+in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 ]
 
 ---
