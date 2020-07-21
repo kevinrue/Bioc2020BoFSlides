@@ -112,29 +112,50 @@ during the session!
 
   + Code
   
-  + Environments (software dependencies and versions)
+  + Environment(s) (software dependencies and versions)
   
   + Input data (e.g., raw data, annotations)
 
+---
+
+# Workflow managers
+
+.pull-left[
+## Examples
+
+<a href="https://www.nextflow.io/"><img src="https://www.nextflow.io/img/nextflow2014_no-bg.png", height="30px", align="middle"></a>
+<a href="https://nf-co.re/"><img src="https://nf-co.re/assets/img/logo/nf-core-logo.svg", height="40px" align="middle"></a>
+
+<a href="https://snakemake.readthedocs.io/en/stable/#"><img src="https://learning.cyverse.org/projects/container_camp_workshop_2019/en/latest/_images/snakemake.png", height="40px" align="middle"></a>
+
+<a href="http://www.ruffus.org.uk/"><img src="http://www.ruffus.org.uk/_images/logo.jpg", height="50px" align="middle"></a>
+<a href="https://github.com/cgat-developers"><img src="https://avatars3.githubusercontent.com/u/5339854?s=200&v=4", height="50px" align="middle"></a>
+<a href="https://github.com/cgat-developers/cgat-core"><img src="https://github.com/cgat-developers/cgat-core/raw/master/docs/img/CGAT_logo.png", height="50px" align="middle"></a>
+
+<a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
+<a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
+
+## No logo ...
+
+`r BiocStyle::Biocpkg('Rcwl')`
+
+]
+
+.pull-right[
+## Features
+
+<i class="far fa-thumbs-up"></i> Versioned workflows
+
+<i class="far fa-thumbs-up"></i> HPC queue managers (e.g., DRMAA)
+
+<i class="far fa-thumbs-up"></i> Containerized environments
+
+<i class="far fa-thumbs-up"></i> Conda environments
+]
 
 ---
 
-# Stuff
-
-
-
-- That does not even include _versions_ of those software tools!
-
-- Individual workflows combine many of those tools for analysis
-  (e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics)
-
-
-
-
-
----
-
-# Stuff
+# Software environments
 
 > A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions `r Citep(bib, "mark2020pipelines")`.
 
