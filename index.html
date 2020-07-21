@@ -84,6 +84,10 @@ we'll pass the (virtual) mic in turn!
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
 during the session!
+
+&lt;i class="fab fa-slack"&gt;&lt;/i&gt;
+Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
+in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 ]
 
 ---
@@ -92,7 +96,7 @@ during the session!
 
 ## Why do we care?
 
-&gt; The bio.tools registry of life science software tools includes over 17,000 entries from more than 1,000 contributors &lt;a name=cite-mark2020pipelines&gt;&lt;/a&gt;([Marx, 2020](https://www.ncbi.nlm.nih.gov/pubmed/32601427)).
+&gt; The [bio.tools](https://bio.tools/) registry of life science software tools includes over 17,000 entries from more than 1,000 contributors &lt;a name=cite-mark2020pipelines&gt;&lt;/a&gt;([Marx, 2020](https://www.ncbi.nlm.nih.gov/pubmed/32601427)).
 
 - We all write workflows that combine many of those tools to process and analyze data.
 
@@ -102,29 +106,58 @@ during the session!
 
   + Code
   
-  + Environments (software dependencies and versions)
+  + Environment(s) (software dependencies and versions)
   
   + Input data (e.g., raw data, annotations)
 
+---
+
+# Workflow managers
+
+.pull-left[
+&lt;a href="https://www.nextflow.io/"&gt;&lt;img src="https://www.nextflow.io/img/nextflow2014_no-bg.png", height="30px", align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://nf-co.re/"&gt;&lt;img src="https://nf-co.re/assets/img/logo/nf-core-logo.svg", height="40px" align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="https://snakemake.readthedocs.io/en/stable/#"&gt;&lt;img src="https://learning.cyverse.org/projects/container_camp_workshop_2019/en/latest/_images/snakemake.png", height="40px" align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="http://www.ruffus.org.uk/"&gt;&lt;img src="http://www.ruffus.org.uk/_images/logo.jpg", height="50px" align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://github.com/cgat-developers"&gt;&lt;img src="https://avatars3.githubusercontent.com/u/5339854?s=200&amp;v=4", height="50px" align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://github.com/cgat-developers/cgat-core"&gt;&lt;img src="https://github.com/cgat-developers/cgat-core/raw/master/docs/img/CGAT_logo.png", height="50px" align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="https://bcbio-nextgen.readthedocs.io/en/latest/"&gt;&lt;img src="https://bcbio-nextgen.readthedocs.io/en/latest/_images/banner.png", height="50px", align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://workflowhub.eu/"&gt;&lt;img src="https://workflowhub.eu/assets/logos/workflowhub-20f8594d47fa27784d6a3c24010cf728e6b47753448dfa0cb6c7b7cc055c08bf.svg", height="50px", align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="https://bioconductor.org/packages/systemPipeR/"&gt;&lt;img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://docs.ropensci.org/drake/"&gt;&lt;img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"&gt;&lt;/a&gt;
+
+## No logo ...
+
+*[Rcwl](https://bioconductor.org/packages/3.11/Rcwl)*
+]
+
+.pull-right[
+## Features
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Transform, merge, split, ... files
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Versioned workflows
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; HPC queue managers and [DRMAA](http://www.drmaa.org/)
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Containerized environments
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Conda environments
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Parallelisation
+]
+
+.center[
+What is _your_ favorite?
+]
 
 ---
 
-# Stuff
-
-
-
-- That does not even include _versions_ of those software tools!
-
-- Individual workflows combine many of those tools for analysis
-  (e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics)
-
-
-
-
-
----
-
-# Stuff
+# Software environments
 
 &gt; A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions ([Marx, 2020](https://www.ncbi.nlm.nih.gov/pubmed/32601427)).
 
