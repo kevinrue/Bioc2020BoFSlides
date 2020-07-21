@@ -143,9 +143,11 @@ during the session!
 .pull-right[
 ## Features
 
+<i class="far fa-thumbs-up"></i> Transform, merge, split, ... files
+
 <i class="far fa-thumbs-up"></i> Versioned workflows
 
-<i class="far fa-thumbs-up"></i> HPC queue managers (e.g., DRMAA)
+<i class="far fa-thumbs-up"></i> HPC queue managers and [DRMAA](http://www.drmaa.org/)
 
 <i class="far fa-thumbs-up"></i> Containerized environments
 
