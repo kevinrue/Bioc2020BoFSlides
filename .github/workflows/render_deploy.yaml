@@ -22,6 +22,7 @@ jobs:
         run: |
           options(repos = c(CRAN = "https://cran.r-project.org"))
           install.packages(c('renv', 'remotes'))
+          renv::restore()
         shell: Rscript {0}
 
       # This lets us augment with additional dependencies
@@ -43,7 +44,6 @@ jobs:
 
       - name: Render site
         run: |
-          install.packages('rmarkdown', Ncpus = 2L)
           rmarkdown::render(input = "index.Rmd")
         shell: Rscript {0}
 
