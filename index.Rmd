@@ -106,7 +106,7 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 ## Why do we care?
 
-> The bio.tools registry of life science software tools includes over 17,000 entries from more than 1,000 contributors `r Citep(bib, "mark2020pipelines")`.
+> The [bio.tools](https://bio.tools/) registry of life science software tools includes over 17,000 entries from more than 1,000 contributors `r Citep(bib, "mark2020pipelines")`.
 
 - We all write workflows that combine many of those tools to process and analyze data.
 
