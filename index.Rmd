@@ -94,6 +94,10 @@ we'll pass the (virtual) mic in turn!
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
 during the session!
+
+<i class="fab fa-slack"></i>
+Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
+in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 ]
 
 ---
@@ -102,7 +106,7 @@ during the session!
 
 ## Why do we care?
 
-> The bio.tools registry of life science software tools includes over 17,000 entries from more than 1,000 contributors `r Citep(bib, "mark2020pipelines")`.
+> The [bio.tools](https://bio.tools/) registry of life science software tools includes over 17,000 entries from more than 1,000 contributors `r Citep(bib, "mark2020pipelines")`.
 
 - We all write workflows that combine many of those tools to process and analyze data.
 
@@ -112,29 +116,58 @@ during the session!
 
   + Code
   
-  + Environments (software dependencies and versions)
+  + Environment(s) (software dependencies and versions)
   
   + Input data (e.g., raw data, annotations)
 
+---
+
+# Workflow managers
+
+.pull-left[
+<a href="https://www.nextflow.io/"><img src="https://www.nextflow.io/img/nextflow2014_no-bg.png", height="30px", align="middle"></a>
+<a href="https://nf-co.re/"><img src="https://nf-co.re/assets/img/logo/nf-core-logo.svg", height="40px" align="middle"></a>
+
+<a href="https://snakemake.readthedocs.io/en/stable/#"><img src="https://learning.cyverse.org/projects/container_camp_workshop_2019/en/latest/_images/snakemake.png", height="40px" align="middle"></a>
+
+<a href="http://www.ruffus.org.uk/"><img src="http://www.ruffus.org.uk/_images/logo.jpg", height="50px" align="middle"></a>
+<a href="https://github.com/cgat-developers"><img src="https://avatars3.githubusercontent.com/u/5339854?s=200&v=4", height="50px" align="middle"></a>
+<a href="https://github.com/cgat-developers/cgat-core"><img src="https://github.com/cgat-developers/cgat-core/raw/master/docs/img/CGAT_logo.png", height="50px" align="middle"></a>
+
+<a href="https://bcbio-nextgen.readthedocs.io/en/latest/"><img src="https://bcbio-nextgen.readthedocs.io/en/latest/_images/banner.png", height="50px", align="middle"></a>
+<a href="https://workflowhub.eu/"><img src="https://workflowhub.eu/assets/logos/workflowhub-20f8594d47fa27784d6a3c24010cf728e6b47753448dfa0cb6c7b7cc055c08bf.svg", height="50px", align="middle"></a>
+
+<a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
+<a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
+
+## No logo ...
+
+`r BiocStyle::Biocpkg('Rcwl')`
+]
+
+.pull-right[
+## Features
+
+<i class="far fa-thumbs-up"></i> Transform, merge, split, ... files
+
+<i class="far fa-thumbs-up"></i> Versioned workflows
+
+<i class="far fa-thumbs-up"></i> HPC queue managers and [DRMAA](http://www.drmaa.org/)
+
+<i class="far fa-thumbs-up"></i> Containerized environments
+
+<i class="far fa-thumbs-up"></i> Conda environments
+
+<i class="far fa-thumbs-up"></i> Parallelisation
+]
+
+.center[
+What is _your_ favorite?
+]
 
 ---
 
-# Stuff
-
-
-
-- That does not even include _versions_ of those software tools!
-
-- Individual workflows combine many of those tools for analysis
-  (e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics)
-
-
-
-
-
----
-
-# Stuff
+# Software environments
 
 > A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions `r Citep(bib, "mark2020pipelines")`.
 
