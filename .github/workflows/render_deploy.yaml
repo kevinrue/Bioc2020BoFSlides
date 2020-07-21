@@ -4,7 +4,7 @@ on:
     branches:
       - master
 
-name: render
+name: render_deploy
 
 jobs:
   render_deploy:
