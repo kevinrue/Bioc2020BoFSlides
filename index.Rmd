@@ -125,8 +125,6 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 # Workflow managers
 
 .pull-left[
-## Examples
-
 <a href="https://www.nextflow.io/"><img src="https://www.nextflow.io/img/nextflow2014_no-bg.png", height="30px", align="middle"></a>
 <a href="https://nf-co.re/"><img src="https://nf-co.re/assets/img/logo/nf-core-logo.svg", height="40px" align="middle"></a>
 
@@ -138,6 +136,7 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 <a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
 <a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
+<a href="https://bcbio-nextgen.readthedocs.io/en/latest/"><img src="https://bcbio-nextgen.readthedocs.io/en/latest/_images/banner.png", height="60px", align="middle"></a>
 
 ## No logo ...
 
