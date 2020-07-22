@@ -72,7 +72,7 @@ Open discussion
 
   + Your preferences
   
-  + Best practices
+  + Opinionated best practices
   
   + Feature requests
 ]
