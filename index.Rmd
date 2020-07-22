@@ -116,9 +116,9 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
   + Code
   
-  + Environment(s) (software dependencies and versions)
+  + Environment(s): e.g., software dependencies, versions
   
-  + Input data (e.g., raw data, annotations)
+  + Input data: e.g., raw data, annotations
 
 ---
 
@@ -140,7 +140,7 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 <a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
 <a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
 
-## No logo ...
+## No logo <i class="far fa-sad-tear"></i> ...
 
 `r BiocStyle::Biocpkg('Rcwl')`
 ]
