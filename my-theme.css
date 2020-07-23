@@ -67,10 +67,26 @@ p>.fab {
   color: #0092ac;
 }
 
-.title-slide>h1 {
-    position: static;
+li>.fa,
+li>.fas,
+li>.far,
+li>.fab {
+  color: #0092ac;
+}
+
+h1 {
     color: #c4d931;
     background-color: #0092ac;
+}
+
+h2 {
+    color: #1a81c2;
+}
+
+.title-slide>h1 {
+    color: #c4d931;
+    background-color: #0092ac;
+    position: static;
     padding-left: 20px;
 }
 
@@ -87,4 +103,9 @@ hr,.title-slide h2::after,
 .mline h1::after {
     background-color: #0092ac;
     color: #0092ac;
+}
+
+.thanks {
+  color: #0092ac;
+  font-size: xx-large;
 }

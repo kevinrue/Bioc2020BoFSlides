@@ -72,7 +72,7 @@ Open discussion
 
   + Your preferences
   
-  + Best practices
+  + Opinionated best practices
   
   + Feature requests
 ]
@@ -93,7 +93,7 @@ we'll pass the (virtual) mic in turn!
 <i class="fab fa-google-drive"></i>
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
-during the session!
+during (and after) the session!
 
 <i class="fab fa-slack"></i>
 Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
@@ -111,14 +111,16 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 - We all write workflows that combine many of those tools to process and analyze data.
 
   + e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics
+  
+  + Some are published, others are "in-house"
 
 - For full reproducibility, collaboration and teaching relies on the capacity to share:
 
   + Code
   
-  + Environment(s) (software dependencies and versions)
+  + Environment(s): e.g., software dependencies, versions
   
-  + Input data (e.g., raw data, annotations)
+  + Input data: e.g., raw data, annotations
 
 ---
 
@@ -140,7 +142,7 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 <a href="https://bioconductor.org/packages/systemPipeR/"><img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"></a>
 <a href="https://docs.ropensci.org/drake/"><img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"></a>
 
-## No logo ...
+## No logo <i class="far fa-sad-tear"></i> ...
 
 `r BiocStyle::Biocpkg('Rcwl')`
 ]
@@ -150,15 +152,19 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 <i class="far fa-thumbs-up"></i> Transform, merge, split, ... files
 
-<i class="far fa-thumbs-up"></i> Versioned workflows
+<i class="far fa-thumbs-up"></i> Checkpoints, logs, reports, visualization
+
+<i class="far fa-thumbs-up"></i> Modular, flexible, partial runs
 
 <i class="far fa-thumbs-up"></i> HPC queue managers and [DRMAA](http://www.drmaa.org/)
 
-<i class="far fa-thumbs-up"></i> Containerized environments
-
-<i class="far fa-thumbs-up"></i> Conda environments
-
 <i class="far fa-thumbs-up"></i> Parallelisation
+
+<i class="far fa-thumbs-up"></i> Portable, containerized, versioned
+
+<i class="far fa-thumbs-up"></i> Different environments for some steps
+
+<i class="far fa-thumbs-up"></i> Integration with <i class="fab fa-r-project"></i>, <i class="fab fa-python"></i>, <i class="fab fa-java"></i>, ...
 ]
 
 .center[
@@ -167,9 +173,165 @@ What is _your_ favorite?
 
 ---
 
-# Software environments
+# Environment managers
 
-> A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions `r Citep(bib, "mark2020pipelines")`.
+$$Same\ workflow\ \times\ Different\ environment\ =\ Different\ result$$
+<br/>
+<br/>
+
+```{r, echo=FALSE, out.height='300px', fig.align='center'}
+knitr::include_graphics("https://i.imgur.com/k5B1CBd.jpg")
+```
+
+---
+
+# Environment managers
+
+.pull-left[
+<a href="https://docs.conda.io/en/latest/"><img src="https://docs.conda.io/en/latest/_images/conda_logo.svg", height="30px", align="middle"></a>
+<a href="https://github.com/TheSnakePit/mamba"><img src="https://miro.medium.com/max/500/1*akFPXZ_b27Bz38cnQHO3yw.png", height="40px", align="middle"></a>
+
+<a href="https://www.docker.com/"><img src="https://bit2bitamericas.com/wp-content/uploads/2020/01/logo-docker.png", height="30px", align="middle"></a>
+<a href="https://sylabs.io/docs/"><img src="https://sylabs.io/assets/images/logos/singularity.png", height="50px", align="middle"></a>
+
+<a href="https://rstudio.github.io/renv/"><img src="https://rstudio.github.io/renv/reference/figures/logo.svg", height="80px", align="middle"></a>
+
+## No logo <i class="far fa-sad-tear"></i> ...
+
+`r BiocStyle::Biocpkg('BiocManager')`
+]
+
+.pull-right[
+## Features
+
+<i class="far fa-thumbs-up"></i> Track software versions
+
+<i class="far fa-thumbs-up"></i> Track source software repositories
+
+<i class="far fa-thumbs-up"></i> Portable, versioned
+
+<i class="far fa-thumbs-up"></i> Check compatibility with other packages
+
+<i class="far fa-thumbs-up"></i> Support multiple programming languages
+
+<i class="far fa-thumbs-up"></i> Track / Manage system dependencies
+
+<i class="far fa-thumbs-up"></i> Upgrade and freeze
+
+<i class="far fa-thumbs-up"></i> Lightweight, fast (e.g., cache)
+]
+
+.center[
+What is _your_ favorite?
+]
+
+---
+
+# Use case: Snakemake
+
+.pull-left[
+```python
+rule bwa:
+    input:
+        "genome.fa"
+        "reads.fq"
+    output:
+        "mapped.bam"
+    singularity:
+        "docker://somecontainer:v1.0"
+    conda:
+        "envs/bwa.yaml"
+    envmodules:
+        "bio/bwa/0.7.9",
+        "bio/samtools/1.9"
+    shell:
+        "bwa mem {input} |"
+        "samtools view -Sbh - > {output}"
+```
+]
+
+.pull-right[
+## Usage
+
+```bash
+snakemake --use-conda
+```
+
+```bash
+snakemake --use-singularity
+```
+
+```bash
+snakemake --use-conda --use-singularity
+```
+
+```bash
+snakemake --use-envmodules
+```
+
+```bash
+snakemake --use-singularity --kubernetes
+```
+]
+
+---
+
+# Paradox of choice
+
+- What do you choose?
+
+- How do you choose?
+
+  + Keep sight of your objective:
+    medical research?
+    teaching?
+    method development?
+
+  + "Best" practice may depend on your environment and goals
+
+  + What works for you? What can your sysadmin support?
+
+- The community may benefit from a resource (e.g., review, book) based on experience to provide guidance and promote adoption of workflow/environment managers adapted to various context.
+
+- Share or link (minimal) working examples for others to use as template 
+
+---
+
+# Discussion points
+
+.pull-left[
+## Past & Present
+
+<i class="fas fa-question"></i> Workflow managers
+
+<i class="fas fa-question"></i> Environment managers
+
+<i class="fas fa-question"></i> Challenges
+
+<i class="fas fa-question"></i> Opinionated best practices
+]
+
+.pull-right[
+## Future
+
+<i class="fas fa-question"></i> Sharing templates and community efforts
+
+<i class="fas fa-question"></i> Feature requests
+
+<i class="fas fa-question"></i> Bioconductor interests and efforts
+]
+
+.thanks[
+.center[
+You're up !
+]
+]
+
+- message in the <i class="far fa-comment-alt"></i> Text chat
+- take the <i class="fas fa-microphone"></i> mic
+- make a <i class="fas fa-chart-bar"></i> poll.
+- edit the <i class="fab fa-google-drive"></i> [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
+- join the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) <i class="fab fa-slack"></i> Slack channel and keep the conversation going!
 
 ---
 
@@ -180,3 +342,13 @@ What is _your_ favorite?
 PrintBibliography(bib)
 ```
 ]
+
+.thanks[
+.center[
+Thank you!
+]
+]
+
+```{r, echo=FALSE, fig.align='center', out.height='400px'}
+knitr::include_graphics("https://user-images.githubusercontent.com/5506112/88258027-6bf10980-ccbf-11ea-8374-998fbb407385.png")
+```
