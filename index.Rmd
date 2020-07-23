@@ -152,17 +152,17 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 <i class="far fa-thumbs-up"></i> Transform, merge, split, ... files
 
-<i class="far fa-thumbs-up"></i> Checkpoints
+<i class="far fa-thumbs-up"></i> Checkpoints, logs, reports, visualization
 
-<i class="far fa-thumbs-up"></i> Modular, flexible
+<i class="far fa-thumbs-up"></i> Modular, flexible, partial runs
 
 <i class="far fa-thumbs-up"></i> HPC queue managers and [DRMAA](http://www.drmaa.org/)
 
-<i class="far fa-thumbs-up"></i> Portable, containerized environments
-
 <i class="far fa-thumbs-up"></i> Parallelisation
 
-<i class="far fa-thumbs-up"></i> Versioned workflows
+<i class="far fa-thumbs-up"></i> Portable, containerized, versioned
+
+<i class="far fa-thumbs-up"></i> Different environments for some steps
 
 <i class="far fa-thumbs-up"></i> Integration with <i class="fab fa-r-project"></i>, <i class="fab fa-python"></i>, <i class="fab fa-java"></i>, ...
 ]
@@ -175,23 +175,40 @@ What is _your_ favorite?
 
 # Environment managers
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+$$Same\ workflow\ \times\ Different\ environment\ =\ Different\ result$$
+---
+
+# Environment managers
+
 .pull-left[
 <a href="https://docs.conda.io/en/latest/"><img src="https://docs.conda.io/en/latest/_images/conda_logo.svg", height="30px", align="middle"></a>
+<a href="https://github.com/TheSnakePit/mamba"><img src="https://miro.medium.com/max/500/1*akFPXZ_b27Bz38cnQHO3yw.png", height="40px", align="middle"></a>
 
 <a href="https://www.docker.com/"><img src="https://bit2bitamericas.com/wp-content/uploads/2020/01/logo-docker.png", height="30px", align="middle"></a>
 <a href="https://sylabs.io/docs/"><img src="https://sylabs.io/assets/images/logos/singularity.png", height="50px", align="middle"></a>
 
 <a href="https://rstudio.github.io/renv/"><img src="https://rstudio.github.io/renv/reference/figures/logo.svg", height="80px", align="middle"></a>
+
+## No logo <i class="far fa-sad-tear"></i> ...
+
+`r BiocStyle::Biocpkg('BiocManager')`
 ]
 
 .pull-right[
 ## Features
 
-<i class="far fa-thumbs-up"></i> Portable
-
 <i class="far fa-thumbs-up"></i> Track software versions
 
-<i class="far fa-thumbs-up"></i> Track the external source to retrieve from
+<i class="far fa-thumbs-up"></i> Track source software repositories
+
+<i class="far fa-thumbs-up"></i> Portable, versioned
 
 <i class="far fa-thumbs-up"></i> Check compatibility with other packages
 
@@ -199,9 +216,9 @@ What is _your_ favorite?
 
 <i class="far fa-thumbs-up"></i> Track / Manage system dependencies
 
-<i class="far fa-thumbs-up"></i> 
+<i class="far fa-thumbs-up"></i> Upgrade and freeze
 
-<i class="far fa-thumbs-up"></i> 
+<i class="far fa-thumbs-up"></i> Lightweight, fast (e.g., cache)
 ]
 
 .center[
@@ -213,8 +230,6 @@ What is _your_ favorite?
 # Use case: Snakemake
 
 .pull-left[
-## Definition
-
 ```python
 rule bwa:
     input:
