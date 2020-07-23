@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## Bioconductor 2020 - Birds of a Feather (BOF)
 ### <a href="https://kevinrue.github.io">Kevin Rue-Albrecht</a> and <a href="https://www.rdm.ox.ac.uk/people/charlotte-george">Charlotte George</a>
 ### University of Oxford
-### 2020-07-31 (updated: 2020-07-21)
+### 2020-07-31 (updated: 2020-07-23)
 
 ---
 
@@ -62,7 +62,7 @@ Open discussion
 
   + Your preferences
   
-  + Best practices
+  + Opinionated best practices
   
   + Feature requests
 ]
@@ -83,7 +83,7 @@ we'll pass the (virtual) mic in turn!
 &lt;i class="fab fa-google-drive"&gt;&lt;/i&gt;
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
-during the session!
+during (and after) the session!
 
 &lt;i class="fab fa-slack"&gt;&lt;/i&gt;
 Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
@@ -101,14 +101,16 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 - We all write workflows that combine many of those tools to process and analyze data.
 
   + e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics
+  
+  + Some are published, others are "in-house"
 
 - For full reproducibility, collaboration and teaching relies on the capacity to share:
 
   + Code
   
-  + Environment(s) (software dependencies and versions)
+  + Environment(s): e.g., software dependencies, versions
   
-  + Input data (e.g., raw data, annotations)
+  + Input data: e.g., raw data, annotations
 
 ---
 
@@ -130,7 +132,7 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 &lt;a href="https://bioconductor.org/packages/systemPipeR/"&gt;&lt;img src="https://github.com/Bioconductor/BiocStickers/blob/master/systemPipeR/systemPipeR.png?raw=true", height="80px" align="middle"&gt;&lt;/a&gt;
 &lt;a href="https://docs.ropensci.org/drake/"&gt;&lt;img src="https://docs.ropensci.org/drake/reference/figures/logo.svg", height="80px" align="middle"&gt;&lt;/a&gt;
 
-## No logo ...
+## No logo &lt;i class="far fa-sad-tear"&gt;&lt;/i&gt; ...
 
 *[Rcwl](https://bioconductor.org/packages/3.11/Rcwl)*
 ]
@@ -140,15 +142,19 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 &lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Transform, merge, split, ... files
 
-&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Versioned workflows
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Checkpoints, logs, reports, visualization
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Modular, flexible, partial runs
 
 &lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; HPC queue managers and [DRMAA](http://www.drmaa.org/)
 
-&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Containerized environments
-
-&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Conda environments
-
 &lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Parallelisation
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Portable, containerized, versioned
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Different environments for some steps
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Integration with &lt;i class="fab fa-r-project"&gt;&lt;/i&gt;, &lt;i class="fab fa-python"&gt;&lt;/i&gt;, &lt;i class="fab fa-java"&gt;&lt;/i&gt;, ...
 ]
 
 .center[
@@ -157,9 +163,163 @@ What is _your_ favorite?
 
 ---
 
-# Software environments
+# Environment managers
 
-&gt; A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions ([Marx, 2020](https://www.ncbi.nlm.nih.gov/pubmed/32601427)).
+`$$Same\ workflow\ \times\ Different\ environment\ =\ Different\ result$$`
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;img src="https://i.imgur.com/k5B1CBd.jpg" height="300px" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Environment managers
+
+.pull-left[
+&lt;a href="https://docs.conda.io/en/latest/"&gt;&lt;img src="https://docs.conda.io/en/latest/_images/conda_logo.svg", height="30px", align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://github.com/TheSnakePit/mamba"&gt;&lt;img src="https://miro.medium.com/max/500/1*akFPXZ_b27Bz38cnQHO3yw.png", height="40px", align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="https://www.docker.com/"&gt;&lt;img src="https://bit2bitamericas.com/wp-content/uploads/2020/01/logo-docker.png", height="30px", align="middle"&gt;&lt;/a&gt;
+&lt;a href="https://sylabs.io/docs/"&gt;&lt;img src="https://sylabs.io/assets/images/logos/singularity.png", height="50px", align="middle"&gt;&lt;/a&gt;
+
+&lt;a href="https://rstudio.github.io/renv/"&gt;&lt;img src="https://rstudio.github.io/renv/reference/figures/logo.svg", height="80px", align="middle"&gt;&lt;/a&gt;
+
+## No logo &lt;i class="far fa-sad-tear"&gt;&lt;/i&gt; ...
+
+*[BiocManager](https://bioconductor.org/packages/3.11/BiocManager)*
+]
+
+.pull-right[
+## Features
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Track software versions
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Track source software repositories
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Portable, versioned
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Check compatibility with other packages
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Support multiple programming languages
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Track / Manage system dependencies
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Upgrade and freeze
+
+&lt;i class="far fa-thumbs-up"&gt;&lt;/i&gt; Lightweight, fast (e.g., cache)
+]
+
+.center[
+What is _your_ favorite?
+]
+
+---
+
+# Use case: Snakemake
+
+.pull-left[
+```python
+rule bwa:
+    input:
+        "genome.fa"
+        "reads.fq"
+    output:
+        "mapped.bam"
+    singularity:
+        "docker://somecontainer:v1.0"
+    conda:
+        "envs/bwa.yaml"
+    envmodules:
+        "bio/bwa/0.7.9",
+        "bio/samtools/1.9"
+    shell:
+        "bwa mem {input} |"
+        "samtools view -Sbh - &gt; {output}"
+```
+]
+
+.pull-right[
+## Usage
+
+```bash
+snakemake --use-conda
+```
+
+```bash
+snakemake --use-singularity
+```
+
+```bash
+snakemake --use-conda --use-singularity
+```
+
+```bash
+snakemake --use-envmodules
+```
+
+```bash
+snakemake --use-singularity --kubernetes
+```
+]
+
+---
+
+# Paradox of choice
+
+- What do you choose?
+
+- How do you choose?
+
+  + Keep sight of your objective:
+    medical research?
+    teaching?
+    method development?
+
+  + "Best" practice may depend on your environment and goals
+
+  + What works for you? What can your sysadmin support?
+
+- The community may benefit from a resource (e.g., review, book) based on experience to provide guidance and promote adoption of workflow/environment managers adapted to various context.
+
+- Share or link (minimal) working examples for others to use as template 
+
+---
+
+# Discussion points
+
+.pull-left[
+## Past &amp; Present
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Workflow managers
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Environment managers
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Challenges
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Opinionated best practices
+]
+
+.pull-right[
+## Future
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Sharing templates and community efforts
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Feature requests
+
+&lt;i class="fas fa-question"&gt;&lt;/i&gt; Bioconductor interests and efforts
+]
+
+.thanks[
+.center[
+You're up !
+]
+]
+
+- message in the &lt;i class="far fa-comment-alt"&gt;&lt;/i&gt; Text chat
+- take the &lt;i class="fas fa-microphone"&gt;&lt;/i&gt; mic
+- make a &lt;i class="fas fa-chart-bar"&gt;&lt;/i&gt; poll.
+- edit the &lt;i class="fab fa-google-drive"&gt;&lt;/i&gt; [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
+- join the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) &lt;i class="fab fa-slack"&gt;&lt;/i&gt; Slack channel and keep the conversation going!
 
 ---
 
@@ -174,6 +334,14 @@ DOI:
 URL:
 [https://www.ncbi.nlm.nih.gov/pubmed/32601427](https://www.ncbi.nlm.nih.gov/pubmed/32601427).
 ]
+
+.thanks[
+.center[
+Thank you!
+]
+]
+
+&lt;img src="https://user-images.githubusercontent.com/5506112/88258027-6bf10980-ccbf-11ea-8374-998fbb407385.png" height="400px" style="display: block; margin: auto;" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
