@@ -98,6 +98,9 @@ during (and after) the session!
 <i class="fab fa-slack"></i>
 Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
 in the [Bioconductor](community-bioc.slack.com) Slack workspace!
+
+<i class="fab fa-github"></i>
+Contribute to the [gitbook](https://github.com/kevinrue/ORCA)!
 ]
 
 ---
@@ -321,7 +324,7 @@ snakemake --use-singularity --kubernetes
 <i class="fas fa-question"></i> Bioconductor interests and efforts
 ]
 
-.thanks[
+.youreup[
 .center[
 You're up !
 ]
@@ -331,7 +334,9 @@ You're up !
 - take the <i class="fas fa-microphone"></i> mic
 - make a <i class="fas fa-chart-bar"></i> poll.
 - edit the <i class="fab fa-google-drive"></i> [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
-- join the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) <i class="fab fa-slack"></i> Slack channel and keep the conversation going!
+- join the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) <i class="fab fa-slack"></i> Slack channel
+- <i class="fab fa-github"></i>
+Contribute to the [gitbook](https://github.com/kevinrue/ORCA)
 
 ---
 
