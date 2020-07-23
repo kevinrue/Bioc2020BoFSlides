@@ -67,6 +67,13 @@ p>.fab {
   color: #0092ac;
 }
 
+li>.fa,
+li>.fas,
+li>.far,
+li>.fab {
+  color: #0092ac;
+}
+
 h1 {
     color: #c4d931;
     background-color: #0092ac;
@@ -98,3 +105,7 @@ hr,.title-slide h2::after,
     color: #0092ac;
 }
 
+.thanks {
+  color: #0092ac;
+  font-size: xx-large;
+}

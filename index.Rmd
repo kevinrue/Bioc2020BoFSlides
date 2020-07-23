@@ -93,7 +93,7 @@ we'll pass the (virtual) mic in turn!
 <i class="fab fa-google-drive"></i>
 Take notes on this collaborative
 [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
-during the session!
+during (and after) the session!
 
 <i class="fab fa-slack"></i>
 Continue the discussion on the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) channel
@@ -175,14 +175,14 @@ What is _your_ favorite?
 
 # Environment managers
 
-<br/>
-<br/>
-<br/>
-<br/>
+$$Same\ workflow\ \times\ Different\ environment\ =\ Different\ result$$
 <br/>
 <br/>
 
-$$Same\ workflow\ \times\ Different\ environment\ =\ Different\ result$$
+```{r, echo=FALSE, out.height='300px', fig.align='center'}
+knitr::include_graphics("https://i.imgur.com/k5B1CBd.jpg")
+```
+
 ---
 
 # Environment managers
@@ -276,6 +276,65 @@ snakemake --use-singularity --kubernetes
 
 ---
 
+# Paradox of choice
+
+- What do you choose?
+
+- How do you choose?
+
+  + Keep sight of your objective:
+    medical research?
+    teaching?
+    method development?
+
+  + "Best" practice may depend on your environment and goals
+
+  + What works for you? What can your sysadmin support?
+
+- The community may benefit from a resource (e.g., review, book) based on experience to provide guidance and promote adoption of workflow/environment managers adapted to various context.
+
+- Share or link (minimal) working examples for others to use as template 
+
+---
+
+# Discussion points
+
+.pull-left[
+## Past & Present
+
+<i class="fas fa-question"></i> Workflow managers
+
+<i class="fas fa-question"></i> Environment managers
+
+<i class="fas fa-question"></i> Challenges
+
+<i class="fas fa-question"></i> Opinionated best practices
+]
+
+.pull-right[
+## Future
+
+<i class="fas fa-question"></i> Sharing templates and community efforts
+
+<i class="fas fa-question"></i> Feature requests
+
+<i class="fas fa-question"></i> Bioconductor interests and efforts
+]
+
+.thanks[
+.center[
+You're up !
+]
+]
+
+- message in the <i class="far fa-comment-alt"></i> Text chat
+- take the <i class="fas fa-microphone"></i> mic
+- make a <i class="fas fa-chart-bar"></i> poll.
+- edit the <i class="fab fa-google-drive"></i> [Google Docs](https://docs.google.com/document/d/1ok2H9HVoa8c-m-VcwdQM0ccOuMTmESKCzaaWHb6trwE/edit?usp=sharing)
+- join the [#reproducibility](https://community-bioc.slack.com/archives/C0185MUQ8TA) <i class="fab fa-slack"></i> Slack channel and keep the conversation going!
+
+---
+
 # References
 
 .small-p[
@@ -283,3 +342,13 @@ snakemake --use-singularity --kubernetes
 PrintBibliography(bib)
 ```
 ]
+
+.thanks[
+.center[
+Thank you!
+]
+]
+
+```{r, echo=FALSE, fig.align='center', out.height='400px'}
+knitr::include_graphics("https://user-images.githubusercontent.com/5506112/88258027-6bf10980-ccbf-11ea-8374-998fbb407385.png")
+```
