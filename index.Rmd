@@ -111,6 +111,8 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 - We all write workflows that combine many of those tools to process and analyze data.
 
   + e.g., ChIP-seq, scRNA-seq, RNA-seq, proteomics
+  
+  + Some are published, others are "in-house"
 
 - For full reproducibility, collaboration and teaching relies on the capacity to share:
 
@@ -150,15 +152,19 @@ in the [Bioconductor](community-bioc.slack.com) Slack workspace!
 
 <i class="far fa-thumbs-up"></i> Transform, merge, split, ... files
 
-<i class="far fa-thumbs-up"></i> Versioned workflows
+<i class="far fa-thumbs-up"></i> Checkpoints
+
+<i class="far fa-thumbs-up"></i> Modular, flexible
 
 <i class="far fa-thumbs-up"></i> HPC queue managers and [DRMAA](http://www.drmaa.org/)
 
-<i class="far fa-thumbs-up"></i> Containerized environments
-
-<i class="far fa-thumbs-up"></i> Conda environments
+<i class="far fa-thumbs-up"></i> Portable, containerized environments
 
 <i class="far fa-thumbs-up"></i> Parallelisation
+
+<i class="far fa-thumbs-up"></i> Versioned workflows
+
+<i class="far fa-thumbs-up"></i> Integration with <i class="fab fa-r-project"></i>, <i class="fab fa-python"></i>, <i class="fab fa-java"></i>, ...
 ]
 
 .center[
@@ -167,9 +173,91 @@ What is _your_ favorite?
 
 ---
 
-# Software environments
+# Environment managers
 
-> A solution, says Boutros, chosen by the Dialogue on Reverse-Engineering Assessment and Methods (DREAM) challenges for genomics tools, is to predefine the input and output and to require containerized software solutions `r Citep(bib, "mark2020pipelines")`.
+.pull-left[
+<a href="https://docs.conda.io/en/latest/"><img src="https://docs.conda.io/en/latest/_images/conda_logo.svg", height="30px", align="middle"></a>
+
+<a href="https://www.docker.com/"><img src="https://bit2bitamericas.com/wp-content/uploads/2020/01/logo-docker.png", height="30px", align="middle"></a>
+<a href="https://sylabs.io/docs/"><img src="https://sylabs.io/assets/images/logos/singularity.png", height="50px", align="middle"></a>
+
+<a href="https://rstudio.github.io/renv/"><img src="https://rstudio.github.io/renv/reference/figures/logo.svg", height="80px", align="middle"></a>
+]
+
+.pull-right[
+## Features
+
+<i class="far fa-thumbs-up"></i> Portable
+
+<i class="far fa-thumbs-up"></i> Track software versions
+
+<i class="far fa-thumbs-up"></i> Track the external source to retrieve from
+
+<i class="far fa-thumbs-up"></i> Check compatibility with other packages
+
+<i class="far fa-thumbs-up"></i> Support multiple programming languages
+
+<i class="far fa-thumbs-up"></i> Track / Manage system dependencies
+
+<i class="far fa-thumbs-up"></i> 
+
+<i class="far fa-thumbs-up"></i> 
+]
+
+.center[
+What is _your_ favorite?
+]
+
+---
+
+# Use case: Snakemake
+
+.pull-left[
+## Definition
+
+```python
+rule bwa:
+    input:
+        "genome.fa"
+        "reads.fq"
+    output:
+        "mapped.bam"
+    singularity:
+        "docker://somecontainer:v1.0"
+    conda:
+        "envs/bwa.yaml"
+    envmodules:
+        "bio/bwa/0.7.9",
+        "bio/samtools/1.9"
+    shell:
+        "bwa mem {input} |"
+        "samtools view -Sbh - > {output}"
+```
+]
+
+.pull-right[
+## Usage
+
+```bash
+snakemake --use-conda
+```
+
+```bash
+snakemake --use-singularity
+```
+
+```bash
+snakemake --use-conda --use-singularity
+```
+
+```bash
+snakemake --use-envmodules
+```
+
+```bash
+snakemake --use-singularity --kubernetes
+```
+]
 
 ---
 
