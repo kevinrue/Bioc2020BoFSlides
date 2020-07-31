@@ -81,14 +81,13 @@ Open discussion
 ## How
 
 <i class="far fa-comment-alt"></i>
-Text chat (on the right)
+[sli.do/mrqa5tmx](http://sli.do/mrqa5tmx)
+
+<i class="fas fa-microphone"></i>
+Take the mic!
 
 <i class="fas fa-chart-bar"></i>
 Polls (on the right)
-
-<i class="fas fa-microphone"></i>
-Message in the chat, or raise your hand:
-we'll pass the (virtual) mic in turn!
 
 <i class="fab fa-google-drive"></i>
 Take notes on this collaborative
