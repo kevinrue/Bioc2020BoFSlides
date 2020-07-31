@@ -355,5 +355,5 @@ Thank you!
 ]
 
 ```{r, echo=FALSE, fig.align='center', out.height='400px'}
-knitr::include_graphics("https://user-images.githubusercontent.com/5506112/88258027-6bf10980-ccbf-11ea-8374-998fbb407385.png")
+knitr::include_graphics("https://raw.githubusercontent.com/Bioconductor/BiocStickers/f792bce2617124b9e6c4fde55b04909125f8db3f/boards/CAB/CAB_logo_drawing.png")
 ```
